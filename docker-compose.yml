@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: farmiq_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-farmiq}
+      POSTGRES_USER: ${POSTGRES_USER:-farmiq}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - farmiq_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  farmiq_postgres_data:
