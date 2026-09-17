@@ -435,3 +435,9 @@ from app.models.weather import (
     WeatherForecast,
     WeatherAlert,
 )
+
+# ============================================================
+# DISEASE DETECTION MODEL IMPORTS
+# ============================================================
+
+from app.models.disease import DiseaseDetection
